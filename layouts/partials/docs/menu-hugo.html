@@ -9,7 +9,7 @@
 {{ define "book-menu-hugo" }}
 <ul>
   {{ range . }}
-  <li class="book-section-flat">
+  <li {{ with .Params.liclass }}class="{{ . }}"{{ end }}>
     <a href="{{ .URL }}" {{ with .Params.class }}class="{{ . }}"{{ end }} {{ if not .Page }}target="_blank" rel="noopener"{{ end }}>
       {{- .Pre -}}
       {{ with .Page }}
