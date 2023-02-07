@@ -1,3 +1,8 @@
 /* You can override SASS variables here. */
 
 // @import "plugins/dark";
+
+// https://github.com/alex-shpak/hugo-book/issues/322
+
+// .default.css #17, default 80rem
+$container-max-width: 90rem;
