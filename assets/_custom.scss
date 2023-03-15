@@ -1,3 +1,25 @@
 /* You can add custom styles here. */
 
 // @import "plugins/numbered";
+
+@mixin sticky {
+    margin: -$padding-16;
+    padding: $padding-16;
+    margin-bottom: 0;
+  
+    background: var(--body-background);
+    position: sticky;
+    top: 0;
+  }
+  
+  .book-header {
+    @include sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .book-footer {
+    @include sticky;
+    bottom: 0;
+    z-index: 1;
+  }
