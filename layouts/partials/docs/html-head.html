@@ -53,3 +53,26 @@ https://github.com/alex-shpak/hugo-book
     integrity="{{ .Data.Integrity }}" crossorigin="anonymous"
   {{- end -}}
 {{- end -}}
+
+<!-- Add Lightbox CSS & JavaScript -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+  integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"
+  integrity="sha512-U9dKDqsXAE11UA9kZ0XKFyZ2gQCj+3AwZdBMni7yXSvWqLFEj8C1s7wRmWl9iyij8d5zb4wm56j4z/JVEwS77g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  // Check if the screen width is less than or equal to 768 pixels (mobile devices)
+  var isMobile = window.innerWidth <= 768;
+
+  // Set positionFromTop value based on the device type
+  var positionFromTop = isMobile ? 100 : 50;
+
+  lightbox.option({
+    'resizeDuration': 200,
+    'positionFromTop': positionFromTop,
+    'fitImagesInViewport': true
+  })
+</script>
