@@ -1,9 +1,7 @@
 {{- if .Page.Site.Params.BookPortableLinks -}}
   {{- template "portable-image" . -}}
 {{- else -}}
-<a href="{{ .Destination | safeURL }}" data-lightbox="{{ .Destination | safeURL }}">
-  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" {{ with .Title }}title="{{ . }}"{{ end }}/>
-</a>
+<img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" {{ with .Title }}title="{{ . }}"{{ end }}/>
 {{- end -}}
 
 {{- define "portable-image" -}}
@@ -17,7 +15,5 @@
       {{- warnf "Image '%s' not found in '%s'" .Destination .Page.File }}
     {{- end }}
   {{- end }}
-  <a href="{{ .Destination | safeURL }}" data-lightbox="{{ .Destination | safeURL }}">
-    <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" {{ with .Title }}title="{{ . }}"{{ end }}/>
-  </a>  
+  <img src="{{ .Destination | safeURL }}" alt="{{ .Text }}" loading="lazy" {{ with .Title }}title="{{ . }}"{{ end }}/>
 {{- end -}}
